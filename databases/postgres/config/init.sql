@@ -3,19 +3,22 @@ CREATE DATABASE postgres_dev;
 CREATE DATABASE postgres_pre;
 CREATE DATABASE postgres_pro;
 
--- Create the databases for the different environments
+-- Create DBA user
+CREATE ROLE dbauser WITH LOGIN SUPERUSER PASSWORD 'password';
+
+-- Create users for the different environments
 CREATE ROLE userperiod WITH LOGIN PASSWORD 'password';
 CREATE ROLE userperioddev WITH LOGIN PASSWORD 'password';
 CREATE ROLE userperiodpre WITH LOGIN PASSWORD 'password';
 CREATE ROLE userperiodpro WITH LOGIN PASSWORD 'password';
 
--- Create the users for the different environments
+-- Create users for the different environments
 CREATE ROLE userschedule WITH LOGIN PASSWORD 'password';
 CREATE ROLE userscheduledev WITH LOGIN PASSWORD 'password';
 CREATE ROLE userschedulepre WITH LOGIN PASSWORD 'password';
 CREATE ROLE userschedulepro WITH LOGIN PASSWORD 'password';
 
--- Crear la tabla
+-- Create test employee table
 CREATE TABLE public.employees
 (
     id serial,
@@ -26,8 +29,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO admin;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -48,8 +51,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO admin;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -70,8 +73,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO admin;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -92,8 +95,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO admin;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
