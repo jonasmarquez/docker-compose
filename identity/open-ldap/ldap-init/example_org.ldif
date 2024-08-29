@@ -1,0 +1,27 @@
+dn: ou=groups,dc=example,dc=org
+objectClass: organizationalunit
+objectClass: top
+ou: groups
+description: groups of users
+
+dn: ou=users,dc=example,dc=org
+objectClass: organizationalunit
+objectClass: top
+ou: users
+description: users
+
+dn: cn=dev,ou=groups,dc=example,dc=org
+objectClass: groupofnames
+objectClass: top
+description: testing group for dev
+cn: dev
+member: cn=john,ou=users,dc=example,dc=org
+member: cn=jane,ou=users,dc=example,dc=org
+
+dn: cn=john,ou=users,dc=example,dc=org
+objectClass: person
+objectClass: top
+cn: example
+sn: example
+memberOf: cn=dev,ou=groups,dc=example,dc=org
+userPassword: 1LearnedVault
