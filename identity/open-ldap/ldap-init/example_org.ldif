@@ -8,15 +8,22 @@ dn: ou=users,dc=example,dc=org
 objectClass: organizationalunit
 objectClass: top
 ou: users
-description: users
-member: cn=john,ou=users,dc=example,dc=org
-member: cn=jane,ou=users,dc=example,dc=org
+description: LDAP Example users
+
+dn: cn=adm,ou=groups,dc=example,dc=org
+objectClass: groupofnames
+objectClass: top
+description: Testing group for ADMINS
+cn: adm
+member: cn=dbauser,ou=users,dc=example,dc=org
 
 dn: cn=dev,ou=groups,dc=example,dc=org
 objectClass: groupofnames
 objectClass: top
 description: Testing group for DEV
 cn: dev
+member: cn=dbauser,ou=users,dc=example,dc=org
+member: cn=dbadev,ou=users,dc=example,dc=org
 member: cn=john,ou=users,dc=example,dc=org
 member: cn=jane,ou=users,dc=example,dc=org
 
@@ -25,16 +32,16 @@ objectClass: groupofnames
 objectClass: top
 description: Testing group for PRE
 cn: pre
-member: cn=john,ou=users,dc=example,dc=org
-member: cn=jane,ou=users,dc=example,dc=org
+member: cn=dbauser,ou=users,dc=example,dc=org
+member: cn=dbapre,ou=users,dc=example,dc=org
 
 dn: cn=pro,ou=groups,dc=example,dc=org
 objectClass: groupofnames
 objectClass: top
 description: Testing group for PRO
 cn: pro
-member: cn=john,ou=users,dc=example,dc=org
-member: cn=jane,ou=users,dc=example,dc=org
+member: cn=dbauser,ou=users,dc=example,dc=org
+member: cn=dbapro,ou=users,dc=example,dc=org
 
 dn: cn=dbauser,ou=users,dc=example,dc=org
 objectClass: person
@@ -42,6 +49,32 @@ objectClass: top
 cn: example
 sn: example
 memberOf: cn=dev,ou=groups,dc=example,dc=org
+memberOf: cn=pre,ou=groups,dc=example,dc=org
+memberOf: cn=pro,ou=groups,dc=example,dc=org
+userPassword: password
+
+dn: cn=dbadev,ou=users,dc=example,dc=org
+objectClass: person
+objectClass: top
+cn: dbadev
+sn: dbadev
+memberOf: cn=dev,ou=groups,dc=example,dc=org
+userPassword: password
+
+dn: cn=dbapre,ou=users,dc=example,dc=org
+objectClass: person
+objectClass: top
+cn: dbapre
+sn: dbapre
+memberOf: cn=pre,ou=groups,dc=example,dc=org
+userPassword: password
+
+dn: cn=dbapro,ou=users,dc=example,dc=org
+objectClass: person
+objectClass: top
+cn: dbapro
+sn: dbapro
+memberOf: cn=pro,ou=groups,dc=example,dc=org
 userPassword: password
 
 dn: cn=john,ou=users,dc=example,dc=org
