@@ -17,7 +17,6 @@ objectClass: groupofnames
 objectClass: top
 description: Testing group for DEV
 cn: dev
-member: cn=dbauserdev,ou=users,dc=example,dc=org
 member: cn=john,ou=users,dc=example,dc=org
 member: cn=jane,ou=users,dc=example,dc=org
 
@@ -26,7 +25,6 @@ objectClass: groupofnames
 objectClass: top
 description: Testing group for PRE
 cn: pre
-member: cn=dbauserpre,ou=users,dc=example,dc=org
 member: cn=john,ou=users,dc=example,dc=org
 member: cn=jane,ou=users,dc=example,dc=org
 
@@ -35,7 +33,6 @@ objectClass: groupofnames
 objectClass: top
 description: Testing group for PRO
 cn: pro
-member: cn=dbauserpro,ou=users,dc=example,dc=org
 member: cn=john,ou=users,dc=example,dc=org
 member: cn=jane,ou=users,dc=example,dc=org
 
@@ -45,30 +42,6 @@ objectClass: top
 cn: example
 sn: example
 memberOf: cn=dev,ou=groups,dc=example,dc=org
-userPassword: password
-
-dn: cn=dbauserdev,ou=users,dc=example,dc=org
-objectClass: person
-objectClass: top
-cn: example
-sn: example
-memberOf: cn=dev,ou=groups,dc=example,dc=org
-userPassword: password
-
-dn: cn=dbauserpre,ou=users,dc=example,dc=org
-objectClass: person
-objectClass: top
-cn: example
-sn: example
-memberOf: cn=pre,ou=groups,dc=example,dc=org
-userPassword: password
-
-dn: cn=dbauserpro,ou=users,dc=example,dc=org
-objectClass: person
-objectClass: top
-cn: example
-sn: example
-memberOf: cn=pro,ou=groups,dc=example,dc=org
 userPassword: password
 
 dn: cn=john,ou=users,dc=example,dc=org
