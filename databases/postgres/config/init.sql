@@ -54,8 +54,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
+ALTER TABLE IF EXISTS public.employees OWNER to dbadev;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbadev;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -76,8 +76,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
+ALTER TABLE IF EXISTS public.employees OWNER to dbapre;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbapre;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -98,8 +98,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
+ALTER TABLE IF EXISTS public.employees OWNER to dbapro;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbapro;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
