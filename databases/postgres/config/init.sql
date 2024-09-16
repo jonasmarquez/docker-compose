@@ -3,7 +3,7 @@ CREATE DATABASE postgres_dev;
 CREATE DATABASE postgres_pre;
 CREATE DATABASE postgres_pro;
 
--- Create DBA users
+-- Create DBA user
 CREATE ROLE dbauser WITH LOGIN SUPERUSER PASSWORD 'password';
 
 -- Create users for the different environments
