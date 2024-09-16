@@ -39,7 +39,7 @@ INSERT INTO public.employees(
            (2, 'Jane', 'Doe', 'jane.doe@example.com', '2022-02-01');
 
 -- Config DEV databases
-\c postgres_dev;
+\c postgres_dev;AMDIN
 
 CREATE TABLE public.employees
 (

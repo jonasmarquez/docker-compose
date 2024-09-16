@@ -17,6 +17,21 @@ description: Testing group for ADMINS
 cn: adm
 member: cn=dbauser,ou=users,dc=example,dc=org
 
+dn: uid=adminuser,ou=Users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: to
+cn: Admin User
+sn: User
+uid: adminuser
+uidNumber: 1002
+gidNumber: 1002
+homeDirectory: /home/adminuser
+loginShell: /bin/bash
+mail: adminuser@example.com
+userPassword: admin
+
 dn: cn=dev,ou=groups,dc=example,dc=org
 objectClass: groupofnames
 objectClass: top
@@ -46,8 +61,8 @@ member: cn=dbapro,ou=users,dc=example,dc=org
 dn: cn=dbauser,ou=users,dc=example,dc=org
 objectClass: person
 objectClass: top
-cn: example
-sn: example
+cn: dbauser
+sn: dbauser
 memberOf: cn=dev,ou=groups,dc=example,dc=org
 memberOf: cn=pre,ou=groups,dc=example,dc=org
 memberOf: cn=pro,ou=groups,dc=example,dc=org
