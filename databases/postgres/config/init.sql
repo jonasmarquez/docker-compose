@@ -5,9 +5,6 @@ CREATE DATABASE postgres_pro;
 
 -- Create DBA users
 CREATE ROLE dbauser WITH LOGIN SUPERUSER PASSWORD 'password';
-CREATE ROLE dbadev WITH LOGIN SUPERUSER PASSWORD 'password';
-CREATE ROLE dbapre WITH LOGIN SUPERUSER PASSWORD 'password';
-CREATE ROLE dbapro WITH LOGIN SUPERUSER PASSWORD 'password';
 
 -- Create users for the different environments
 CREATE ROLE userperiod WITH LOGIN PASSWORD 'password';
@@ -54,8 +51,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbadev;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbadev;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -76,8 +73,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbapre;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbapre;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
@@ -98,8 +95,8 @@ CREATE TABLE public.employees
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.employees OWNER to dbapro;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbapro;
+ALTER TABLE IF EXISTS public.employees OWNER to dbauser;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.employees TO dbauser;
 
 -- Insertar contenido en la tabla
 INSERT INTO public.employees(
